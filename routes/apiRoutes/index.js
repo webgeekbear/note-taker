@@ -28,6 +28,7 @@ router.delete('/notes/:id', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
+    // Add a UUID to the body
     req.body.id = uuidv4();
 
     if (!validateNote(req.body)) {
