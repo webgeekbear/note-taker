@@ -1,7 +1,7 @@
 # Note taker
 
 ## Description
-Allow the user to write and save notes 
+Allow the user to write, save, and delete notes 
 
 ## Table of Contents
 
