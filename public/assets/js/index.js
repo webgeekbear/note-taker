@@ -25,6 +25,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+// Get all notes
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -33,6 +34,7 @@ const getNotes = () =>
     },
   });
 
+  // Save a note
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -52,6 +54,7 @@ const saveNote = (note) =>
     alert('Thank you for adding a note!');
   });
 
+// Delete a note
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -69,6 +72,7 @@ const deleteNote = (id) =>
     alert('Note deleted!');
   });
 
+// Display the active note
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
@@ -85,6 +89,7 @@ const renderActiveNote = () => {
   }
 };
 
+// Handle note saving
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
@@ -127,6 +132,7 @@ const handleNewNoteView = (e) => {
   renderActiveNote();
 };
 
+// Show and hide the Save button
 const handleRenderSaveBtn = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
     hide(saveNoteBtn);
